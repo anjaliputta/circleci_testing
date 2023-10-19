@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  build:
+    executor: python-3.8
+
+    steps:
+      - checkout
+
+      - run:
+          name: Run main.py
+          command: python main.py
+
+      - run:
+          name: Run tests
+          command: python test.py
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
