@@ -9,6 +9,10 @@ jobs:
       - checkout
 
       - run:
+          name: Install pytest
+          command: pip install pytest
+
+      - run:
           name: Run main.py
           command: python main.py
 
